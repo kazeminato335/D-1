@@ -1,53 +1,66 @@
 # D-1 — Portofolio Naufal Fikrianto
 
-Website portofolio satu halaman untuk **Naufal Fikrianto**, mahasiswa Teknik Lingkungan
-sekaligus pemain futsal. Dibuat murni dengan HTML + CSS (tanpa JavaScript, tanpa build tool,
-tanpa CDN) sehingga bisa dibuka langsung dari file lokal.
+Website portofolio satu halaman untuk **Naufal Fikrianto** — mahasiswa **Teknik Lingkungan,
+Universitas Singaperbangsa Karawang (UNSIKA)**, semester 7, sekaligus pemain futsal.
+
+Dibuat murni dengan HTML + CSS: tanpa JavaScript, tanpa build tool, tanpa CDN.
+
+**Live:** https://kazeminato335.github.io/D-1/
 
 ## Isi repo
 
 | File | Keterangan |
 |---|---|
-| `index.html` | Seluruh struktur & konten halaman |
+| `index.html` | Struktur & konten halaman |
 | `style.css` | Tampilan, tema, dan aturan responsif |
+| `assets/*.jpg` | Gambar proyek (DED, skema unit, ilustrasi unit) |
 | `README.md` | Dokumentasi ini |
 
 ## Bagian halaman
 
-1. **Hero** — perkenalan, nomor punggung, strip statistik
-2. **Tentang** — narasi singkat + daftar keahlian
-3. **Statistik** — 4 kartu dengan progress bar beranimasi
-4. **Prestasi** — timeline 2022–2025
-5. **Galeri** — grid foto asimetris
-6. **Kontak** — email, telepon, sosial, form pesan
+1. **Hero** — perkenalan, kartu identitas, ringkasan keahlian
+2. **Tentang** — latar belakang Teknik Lingkungan + futsal
+3. **Kompetensi** — 4 kartu dengan progress bar
+4. **Proyek** — timeline: capstone TPA Jalupang, AMDAL TPS 3R, Etika Profesi, futsal
+5. **Galeri** — gambar DED & skema unit pengolahan lindi
+6. **Kontak** — email, lokasi, kampus, Instagram, GitHub
 
-## Menjalankan secara lokal
+## Data yang sudah terisi
 
-Klik dua kali `index.html`, atau:
+- Nama, kampus (UNSIKA), semester 7
+- Email: `riantonaufal8@gmail.com`
+- Lokasi: Bekasi, Jawa Barat
+- Instagram: [@nfiknt](https://instagram.com/nfiknt)
+- GitHub: [kazeminato335](https://github.com/kazeminato335)
+- Tiga proyek akademik semester 7
+
+## Yang masih perlu dilengkapi
+
+| Bagian | Lokasi | Catatan |
+|---|---|---|
+| Prestasi futsal | `.timeline-item` terakhir (tahun 2025) | Masih teks placeholder |
+| Nomor punggung & posisi | `.jersey-number`, `.jersey-role` | Sekarang `7` dan "Futsal" |
+| Foto futsal | galeri, blok `.ph ph-1` | Ganti dengan `<img src="assets/...">` |
+| Persentase kompetensi | `style="--w: 80%"` + `.stat-value` | Sesuaikan penilaian sendiri |
+
+## Catatan tentang gambar proyek
+
+Gambar di `assets/` berasal dari dokumen capstone **Kelompok K04** (redesain drainase &
+IPAL lindi TPA Jalupang). Sudah dicantumkan atribusi kelompok pada caption. Jika rekan tim
+tidak ingin karyanya dipublikasikan, hapus file `assets/*.jpg` dan ganti blok galeri
+dengan foto pribadi.
+
+## Menjalankan lokal
 
 ```bash
-# dari folder repo
 start index.html        # Windows
 ```
 
 Cek tampilan ponsel: `F12` → ikon perangkat (Ctrl+Shift+M).
 
-## Yang perlu diganti sebelum dipublikasikan
-
-> Semua angka dan prestasi di halaman masih **placeholder**. Bagian yang harus diganti
-> sudah ditandai komentar `<!-- GANTI ... -->` di `index.html`.
-
-- Nama brand (`NF`, `Naufal`) dan judul halaman
-- Angka di `.hero-stats`: gol, assist, IPK
-- Nomor punggung (`.jersey-number`, `.jersey-club`) dan posisi (`.jersey-role`)
-- Nilai & persentase di `.stat-card` (`style="--w: 64%"`)
-- 4 item `.timeline-item` (tahun, event, hasil)
-- Foto galeri: ganti `<div class="ph ...">` dengan `<img src="..." alt="...">`
-- Email `naufal.fikrianto@example.com`, nomor telepon, dan link sosial (`href="#"`)
-
 ## Kustomisasi
 
-Ganti warna aksen lewat variabel di `style.css`:
+Warna aksen diatur lewat variabel di `style.css`:
 
 ```css
 :root {
@@ -57,19 +70,14 @@ Ganti warna aksen lewat variabel di `style.css`:
 }
 ```
 
-Pilihan aksen lain: `#00d4ff` (cyan), `#ff4d2d` (oranye), `#22c55e` (hijau lapangan).
+## Publikasi
 
-## Publikasi (GitHub Pages)
-
-1. Buka **Settings → Pages**.
-2. *Source*: **Deploy from a branch**.
-3. Branch `main`, folder `/ (root)` → **Save**.
-4. Tunggu 1–2 menit, situs aktif di:
-   `https://kazeminato335.github.io/D-1/`
+GitHub Pages sudah aktif dan menyajikan branch `main` folder root. Setiap `git push`
+ke `main` otomatis memperbarui situs dalam 1–2 menit.
 
 ## Catatan teknis
 
-- Menu mobile memakai trik `:checkbox` CSS — tetap dapat diakses lewat keyboard.
-- Responsif di 980px, 760px, dan 420px; tipografi memakai `clamp()`.
+- Menu mobile memakai trik `:checkbox` CSS — tetap bisa diakses lewat keyboard.
+- Responsif di 980px, 760px, 420px; tipografi memakai `clamp()`.
 - Aksesibilitas: skip link, `aria-label`, focus ring, `prefers-reduced-motion`.
-- Form kontak masih statis (`action="#"`); sambungkan ke Formspree/Netlify Forms bila perlu.
+- Form kontak memakai `mailto:`; ganti ke Formspree/Netlify Forms bila ingin form langsung.

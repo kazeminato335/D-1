@@ -856,6 +856,30 @@ p {
   border-top: 1px solid var(--line);
 }
 
+/* Gambar asli di galeri */
+.gallery-item img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 4 / 3;
+  background: var(--bg-alt);
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.03);
+}
+
+.gallery-lg img {
+  aspect-ratio: 3 / 3.4;
+}
+
+.gallery-wide img,
+.gallery-wide .ph {
+  aspect-ratio: 16 / 5;
+}
+
 /* 9. KONTAK ---------------------------------------------------------------- */
 .contact {
   background: radial-gradient(
@@ -1158,6 +1182,12 @@ p {
   .gallery-lg {
     grid-column: span 1;
     grid-row: span 1;
+  }
+
+  .gallery-lg img,
+  .gallery-wide img,
+  .gallery-wide .ph {
+    aspect-ratio: 4 / 3;
   }
 
   .badge-card {
